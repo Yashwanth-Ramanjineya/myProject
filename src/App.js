@@ -50,7 +50,7 @@ class App extends Component {
         </button>
         <MySecondData />
 
-        <label>Username: <input type='text' value={this.state.name} onChange={this.handleUsername} /></label>
+        <label>Username App: <input type='text' value={this.state.name} onChange={this.handleUsername} /></label>
         <label>PasswordNamew: <input type='password' value={this.state.pwd} onChange={this.handlePwd} /></label>
         <button onClick={this.handleLogin}>Login</button>
       </div>
