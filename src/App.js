@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       myData: "Initial data",
       name: '',
-      pwd: ''
+      pwd: '',
+      year:1995,
     };
   }
 
