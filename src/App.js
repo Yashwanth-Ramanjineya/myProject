@@ -45,6 +45,7 @@ class App extends Component {
         <img src={myPhoto} />
         <MyData data={this.state.myData} />
         <h1>{this.state.myData}</h1>
+        <h2>my data</h2>
         <button onClick={this.handleMyButton}>
           Click Here to Update mySyate
         </button>
