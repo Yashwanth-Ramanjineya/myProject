@@ -24,6 +24,7 @@ class Keerthi extends Component{
     
         return(
             <div className="App">
+                <h1>This is Keerthi Component</h1>
             
         <h1>Hi Here is My Clock {this.state.date.toLocaleTimeString()}</h1>
                 <h1>It is</h1>
