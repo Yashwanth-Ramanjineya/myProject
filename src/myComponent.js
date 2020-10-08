@@ -4,7 +4,7 @@ import myPhoto from "../src/imagesFolder/logo192.png";
 // import bhaskarclock from './bhaskarclock';
 import "./App.css";
 
-class Clock extends Component {
+class MyComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,15 +33,15 @@ class Clock extends Component {
 
 
   render() {
-    console.log(this.state.date.toLocaleTimeString)
+
     return (
       <div className="App">
-        <h1>Hello World! Here is my Clock {this.state.date.toLocaleTimeString()}</h1>
+          <h1>New Compken t</h1>
+        
         <h2>It is </h2>
-        <button onClick={this.stopTimer}>Stop Timer</button>
       </div>
     );
   }
 }
 
-export default Clock;
+export default MyComponent;

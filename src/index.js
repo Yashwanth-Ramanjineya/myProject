@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Clock from './Clock';
+import Keethi from './Keerthi';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Keerthi from './Keerthi';
+import MyComponent from './myComponent';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Clock />
-  </React.StrictMode>,
+
+    <Router>
+      <Switch>
+        <Route exact path='/' component={Clock} />
+        <Route exact path='/keerthi' component={Keerthi} />
+        <Route exact path='/home' component={MyComponent} />
+      </Switch>
+      </Router>,
   document.getElementById('root')
 );
 
