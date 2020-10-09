@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Clock from './Clock';
-import Keethi from './Keerthi';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Keerthi from './Keerthi';
 import MyComponent from './myComponent';
+import My2ndComponent from './My2ndComponent';
 
 ReactDOM.render(
 
@@ -15,6 +15,7 @@ ReactDOM.render(
         <Route exact path='/' component={Clock} />
         <Route exact path='/keerthi' component={Keerthi} />
         <Route exact path='/home' component={MyComponent} />
+        <Route exact path='/function' component={My2ndComponent} />
       </Switch>
       </Router>,
   document.getElementById('root')
