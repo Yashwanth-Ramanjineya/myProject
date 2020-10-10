@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import myPhoto from "../src/imagesFolder/logo192.png";
-// import bhaskarclock from './bhaskarclock';
+//import Bhaskarclock from './Bhaskarclock';
+import Keerthi from './Keerthi.js';
 import "./App.css";
 import My3rdComponent from './my3rdComponent';
 
