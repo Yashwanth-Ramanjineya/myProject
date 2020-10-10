@@ -3,42 +3,53 @@ import logo from "./logo.svg";
 import myPhoto from "../src/imagesFolder/logo192.png";
 // import bhaskarclock from './bhaskarclock';
 import "./App.css";
+import My3rdComponent from './my3rdComponent';
 
 class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     date: new Date()
+     date: 'Hello Yash'
     };
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(), 1000
-    )
+    console.log("this is didmount")
   }
 
-  tick = () => {
-    this.setState({date: new Date()})
+  // static getDerivedStateFromProps() {
+  //   console.log("getDerivedStateFromProps")
+  // };
+
+  shouldComponentUpdate() {
+    console.log("shouldrerender or not")
+    return true;
   }
+
+  componentDidUpdate(newProps, newState) {
+    console.log("componentDidUpdate")
+  }
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount")
+  }
+
 
   //componentWillUnmount() {
     //console.log("cOMPOEE EILL Unmount")
    //clearInterval(this.timerID)
   //}
 
-  stopTimer = () => {
-    clearInterval(this.timerID)
+
+  handleChange = () => {
+    this.setState({date: "Helooo Update Yash"})
   }
-
-
   render() {
-    console.log(this.state.date.toLocaleTimeString)
     return (
       <div className="App">
-        <h1>Hello World! Here is my Clock {this.state.date.toLocaleTimeString()}</h1>
-        <h2>It is </h2>
-        <button onClick={this.stopTimer}>Stop Timer</button>
+        <h1>My React Component</h1>
+        <h3>{this.state.date}</h3>
+        <button onClick={this.handleChange}>Click here!</button>
       </div>
     );
   }
