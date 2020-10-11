@@ -9,6 +9,8 @@ import MyComponent from './myComponent';
 import My3rdComponent from './my3rdComponent';
 import User from './User';
 import My2ndComponent from './My2ndComponent';
+import Date2 from './Date2';
+
 
 ReactDOM.render(
 
@@ -19,8 +21,8 @@ ReactDOM.render(
         <Route exact path='/home' component={MyComponent} />
         <Route exact path='/My3rd' component={My3rdComponent} />
         <Route exact path='/user' component={User} />
-
         <Route exact path='/function' component={My2ndComponent} />
+        <Route exact path='/date' component={Date2} />
       </Switch>
       </Router>,
   document.getElementById('root')

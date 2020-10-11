@@ -37,6 +37,9 @@ button {
   background-color: Black;
   color: white
 }
+.error{
+  color:red;
+}
 
 @keyframes App-logo-spin {
   from {

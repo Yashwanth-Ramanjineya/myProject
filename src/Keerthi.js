@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import My2ndComponent from './My2ndComponent';
+import Date2 from './Date2';
 
 class Keerthi extends Component{
     constructor(props){
@@ -30,6 +31,8 @@ class Keerthi extends Component{
                      <h1>Hi Here is My Clock {this.state.date.toLocaleTimeString()}</h1>
                         <h1>It is</h1>
                         <My2ndComponent  mydata="thisnis my parent class" mydata1="hello" />
+                        <Date2 />
+
                  
                             <button onClick={this.stopTimer}>Stop Timer</button>
 
