@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Keerthi from './Keerthi';
 import MyComponent from './myComponent';
+import Lifecycle from './Lifecycle';
 
 ReactDOM.render(
 
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route exact path='/' component={Clock} />
         <Route exact path='/keerthi' component={Keerthi} />
         <Route exact path='/home' component={MyComponent} />
+        <Route exact path='/about' component={Lifecycle} />
       </Switch>
       </Router>,
   document.getElementById('root')
