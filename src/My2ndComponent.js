@@ -5,8 +5,9 @@ function My2ndComponent(props){
     console.log("===",props);
     return(
         <div>
-        <h1>my functional component {props.mydata}</h1>
+        <h1>{props.mydata}</h1>
         <p>{props.mydata1}</p>
+        <p>{props.hehe}</p>
         </div>
     )
 }

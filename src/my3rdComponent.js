@@ -8,12 +8,12 @@ function My3rdComponent(props) {
 //   }
   return (
     <div>
-      <p>{props.myData1}</p>
+      {props.myData1 && props.myData1.map(item => (<p>{item}</p>))}
     </div>
   );
 }
 My3rdComponent.propTypes = {
-    myData1: PropType.string,
+    myData1: PropType.array,
     myData: PropType.string
 }
 export default My3rdComponent;
