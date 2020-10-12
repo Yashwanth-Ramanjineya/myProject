@@ -50,6 +50,7 @@ class Clock extends Component {
       <div className="App">
         <h1>My React Component</h1>
         <h3>{this.state.date}</h3>
+        <My3rdComponent />
         <button onClick={this.handleChange}>Click here!</button>
       </div>
     );
