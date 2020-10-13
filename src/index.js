@@ -10,6 +10,7 @@ import My3rdComponent from './my3rdComponent';
 import User from './User';
 import My2ndComponent from './My2ndComponent';
 import Date2 from './Date2';
+import Date3 from './Date3';
 
 
 ReactDOM.render(
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Route exact path='/user' component={User} />
         <Route exact path='/function' component={My2ndComponent} />
         <Route exact path='/date' component={Date2} />
+        <Route exact path='/array' component={Date3} />
       </Switch>
       </Router>,
   document.getElementById('root')
