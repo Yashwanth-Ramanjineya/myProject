@@ -12,6 +12,8 @@ class Clock extends Component {
     this.state = {
      date: 'Hello Yash'
     };
+
+    this.myRef = React.createRef();
   }
 
   componentDidMount() {
@@ -44,12 +46,14 @@ class Clock extends Component {
 
   handleChange = () => {
     this.setState({date: "Helooo Update Yash"})
+    console.log(this.myRef.value);
   }
   render() {
     return (
       <div className="App">
         <h1>My React Component</h1>
         <h3>{this.state.date}</h3>
+        <input type="text" ref={(element) => this.myRef = element}/>
         <My3rdComponent />
         <button onClick={this.handleChange}>Click here!</button>
       </div>
