@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
 
 class Date2 extends Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class Date2 extends Component {
   }
   componentWillUnmount() {
     console.log("component is not updatr");
+  }
+  static getDerivedStateFromProps(newProps) {
+    console.log(window.location)
+    console.log(newProps && newProps);
   }
   handleUsername = (e) => {
     this.setState({ username: e.target.value });
@@ -69,4 +74,7 @@ class Date2 extends Component {
     );
   }
 }
-export default Date2;
+const mapStateToProps = (state) =>({
+  myStoreData: state
+})
+export default connect(mapStateToProps)(Date2);
