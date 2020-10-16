@@ -1,8 +1,14 @@
-let nextToDo = 0;
-
-
-export const addToDo = text => ({
+export const addToDo = data => ({
     type: 'ADD_TODO',
-    id: nextToDo++,
-    text
+    data
+})
+
+export const addMyStaticData = data => ({
+    type: 'ADD_MY_STATIC',
+    data
+})
+
+export const loadMyData = data => ({
+    type: 'LOAD_MY_DATA',
+    data
 })

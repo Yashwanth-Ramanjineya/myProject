@@ -26,7 +26,7 @@ class Date2 extends Component {
   }
   static getDerivedStateFromProps(newProps) {
     console.log(window.location)
-    console.log(newProps && newProps);
+    console.log("MyDatata======", newProps && newProps.myStoreData);
   }
   handleUsername = (e) => {
     this.setState({ username: e.target.value });
@@ -42,6 +42,10 @@ class Date2 extends Component {
     }
     console.log(this.state.username + "  " + this.state.password);
   };
+
+  goBack = () => {
+    this.props.history.push('/')
+  }
   render() {
     return (
       <div>
@@ -70,6 +74,7 @@ class Date2 extends Component {
         </p> : null}
 
         <button onClick={this.update}>update!</button>
+        <button onClick={this.goBack}>Back!</button>
       </div>
     );
   }
