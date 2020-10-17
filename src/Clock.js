@@ -3,19 +3,27 @@ import logo from "./logo.svg";
 import myPhoto from "../src/imagesFolder/logo192.png";
 // import bhaskarclock from './bhaskarclock';
 import "./App.css";
+import My3rdComponent from './my3rdComponent';
+import {connect} from 'react-redux';
+import {addToDo, addMyStaticData, loadMyData} from './actions';
+
 
 class Clock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     date: new Date()
+     date: 'Hello Yash',
+     firstname: '',
+     lastname: '',
+     isClicked: false
     };
+
+    this.myRef = React.createRef();
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(), 1000
-    )
+    console.log("this is didmount")
+    this.props.loadData("myLoading data")
   }
 
   tick = () => {
@@ -27,21 +35,66 @@ class Clock extends Component {
    //clearInterval(this.timerID)
   //}
 
-  stopTimer = () => {
-    clearInterval(this.timerID)
+
+  handleClick = () => {
+   var myData = {
+     fullname: this.state.firstname + ' ' +this.state.lastname
+   }
+   this.setState({isClicked: true})
+   this.props.addToDo(myData)
   }
 
+
+  handleMySecond = () => {
+    this.props.addMySecondAction('My Updated Second data am storing in redux')
+  }
+
+  static getDerivedStateFromProps(newProps, state) {
+    console.log(state, "state")
+    console.log(newProps && newProps.idData, "newProps======")
+    if(newProps && newProps.idData.length > 0 && state.isClicked) {
+      newProps.history.push('/date');
+    }
+    
+  }
+
+  handleFirstName = (e) => {
+    this.setState({firstname: e.target.value})
+  }
+
+  handleLastName = (e) => {
+    this.setState({lastname: e.target.value})
+  }
 
   render() {
     console.log(this.state.date.toLocaleTimeString)
     return (
       <div className="App">
-        <h1>Hello World! Here is my Clock {this.state.date.toLocaleTimeString()}</h1>
-        <h2>It is </h2>
-        <button onClick={this.stopTimer}>Stop Timer</button>
+        <h1>My React Component</h1>
+        <h3>{this.state.date}</h3>
+        <label>First Name: <input type="text" onChange={this.handleFirstName}/></label>
+        <label>Last Name: <input type="text" onChange={this.handleLastName}/></label>
+        <My3rdComponent myData1={['hell', 'hfhf']}/>
+        <button onClick={this.handleClick}>Click here!</button>
+        <button onClick={this.handleMySecond}>Click Here another user Event</button>
       </div>
     );
   }
 }
 
-export default Clock;
+const mapStateToProps = (state) => ({
+  idData: state
+})
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addToDo: (value) => dispatch(addToDo(value)),
+    addMySecondAction: (value) => dispatch(addMyStaticData(value)),
+    loadData: (value) => dispatch(loadMyData(value))
+  }
+}
+
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clock);

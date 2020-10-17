@@ -8,38 +8,34 @@ class MyComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     date: new Date()
+      date: new Date(),
     };
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(), 1000
-    )
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
 
   tick = () => {
-    this.setState({date: new Date()})
-  }
+    this.setState({ date: new Date() });
+  };
 
   //componentWillUnmount() {
-    //console.log("cOMPOEE EILL Unmount")
-   //clearInterval(this.timerID)
+  //console.log("cOMPOEE EILL Unmount")
+  //clearInterval(this.timerID)
   //}
 
   stopTimer = () => {
-    clearInterval(this.timerID)
-  }
-
+    clearInterval(this.timerID);
+  };
 
   render() {
-
     return (
-      <div className="App">
-          <h1>New Compken t</h1>
-        
+      <>
+        <h1>New Compken t</h1>
+        <div>fdjkgkdfg</div>
         <h2>It is </h2>
-      </div>
+      </>
     );
   }
 }

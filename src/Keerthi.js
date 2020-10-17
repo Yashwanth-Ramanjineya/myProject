@@ -23,25 +23,48 @@ class Keerthi extends Component{
       }
     render(){
         console.log(this.state.date.toLocaleTimeString)
-    
-        return(
-            <div className="App">
-                <h1>This is Keerthi Component</h1>
-            
-                     <h1>Hi Here is My Clock {this.state.date.toLocaleTimeString()}</h1>
-                        <h1>It is</h1>
-                        <My2ndComponent  mydata="thisnis my parent class" mydata1="hello" />
-                        <Date2 />
+        return ( 
+            <div className = "App">
+                <h1> This is Keerthi Component</h1>
+                <h1> Hi Here is My Clock {this.state.date.toLocaleTimeString()} </h1> 
+                <h2> here my list </h2>
+                <My2ndComponent mydata = "thisnis my parent class" mydata1 = "hello" />
+                <Date2 />
 
-                 
-                            <button onClick={this.stopTimer}>Stop Timer</button>
+                {this.state.listData.data.map((item) => (
+                    <div>
+                            <label>Name: <b>
+                                {item.name} </b> 
+                            </label> 
+                            <label>Address: <b> 
+                                {item.address} </b> 
+                            </label> 
+                            <label>Validity: <b> 
+                                {item.validity} </b>
+                            </label>
+                        </div>
+                    ) )
+                }
+               {/* {this.state.listData.map((item) => (
+                          <ul>
+                            <li>{item.name}</li>
+                          </ul>
+                ))} */}
 
-            </div>
+                    <My2ndComponent mydata = "Hiiiiii" hehe = "kjsfhsfkdghsdfkghlk" mydata1 = "Yashhhhhh" / >
+                    <button onClick = {this.loadDateCp}> Load Date2 Component </button> 
+                    <button onClick = {this.unLoadDateCp}> UNLoad Date2 Component </button>
+         
+                            {this.state.load ? < Date2 /> : null}
 
-        );
+                            <button onClick = {this.stopTimer}> Stop Timer </button> 
+             </div>
+            );     
+              
+        
     }
+
+
+
 }
-
-
-
 export default Keerthi;
